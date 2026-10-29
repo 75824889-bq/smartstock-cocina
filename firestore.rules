@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Solo estas cuentas de Google pueden leer y escribir. Cambie los correos por los reales.
+    function autorizado() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in [
+          'PROPIETARIO@gmail.com',
+          'ENCARGADO@gmail.com'
+        ];
+    }
+    match /{document=**} {
+      allow read, write: if autorizado();
+    }
+  }
+}

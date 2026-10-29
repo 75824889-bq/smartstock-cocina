@@ -1,57 +1,39 @@
-SMART STOCK COCINA - Paquete web instalable  ·  Versión 1.0
-Edición para pizzerías, restobares y cocinas (color naranja).
+SMART STOCK COCINA v2.0  (El Chiquito Inka)
+===========================================
+Novedad: los datos viven en la nube (Firebase Firestore) y se entra con una cuenta Google autorizada.
+El propietario y el encargado ven los mismos datos desde cualquier celular o computadora.
 
-QUÉ CONTIENE
-- index.html            La aplicación completa (un solo archivo).
-- manifest.webmanifest  Permite instalarla en el celular como app.
-- sw.js                 Hace que abra sin Internet y avisa cuando hay una versión nueva.
-- icon-192.png, icon-512.png y apple-touch-icon.png  Ícono naranja de la app.
-- logo-horizontal.png   Logo "Smart Stock Cocina" que se ve en la pestaña Más.
+ARCHIVOS
+  index.html, sw.js, manifest.webmanifest, iconos y logo: la aplicación.
+  firestore.rules: reglas de seguridad (NO se sube a GitHub; se pega en Firebase).
 
-PASO 1. CREAR EL REPOSITORIO NUEVO EN GITHUB (esta edición va en un repositorio propio)
- 1. Entre a github.com con su cuenta. Pulse el + de arriba a la derecha > New repository.
- 2. Nombre: smartstock-cocina. Márquelo como Public. Pulse Create repository.
- 3. Pulse "uploading an existing file" (o Add file > Upload files).
- 4. Arrastre los 7 archivos sueltos de esta carpeta (no la carpeta ni el ZIP). Commit changes.
- 5. Cree el archivo LICENSE: abra el LICENSE de su repositorio "smartstock", copie el texto, y en este repositorio use Add file > Create new file, nombre LICENSE, pegue el texto y haga Commit.
+PASO 1. Reglas de seguridad (Firebase)
+  1. Abra firestore.rules con el Bloc de notas y cambie
+     PROPIETARIO@gmail.com y ENCARGADO@gmail.com por los Gmail reales.
+  2. En Firebase: Firestore Database > pestaña Reglas.
+  3. Borre lo que haya, pegue el contenido y toque Publicar.
 
-PASO 2. ACTIVAR LA PUBLICACIÓN
- 1. En el repositorio: Settings (Ajustes) > Pages (Páginas).
- 2. Source: Deploy from a branch. Branch: main (aparece como "principal") y carpeta / (root). Save (Guardar).
- 3. Espere 1 a 3 minutos y recargue. La dirección será parecida a:
-    https://SU-USUARIO.github.io/smartstock-cocina/
- 4. Ábrala en la computadora y recárguela con Ctrl + F5. Debe verse el encabezado naranja con "Smart Stock" y "Cocina · Control de inventarios · v1.0".
+PASO 2. Subir la app a GitHub (reemplaza la v1.3)
+  1. Entre al repositorio smartstock-cocina > Add file > Upload files.
+  2. Suba TODOS los archivos de esta carpeta, excepto firestore.rules y LEEME.txt si no los quiere publicar.
+  3. Confirme (Commit changes). En 1 o 2 minutos la dirección ya tiene la v2.0.
+  Dirección: https://75824889-bq.github.io/smartstock-cocina/
 
-PASO 3. INSTALARLA EN EL CELULAR
- - iPhone (Safari): abrir la dirección > botón Compartir > Añadir a pantalla de inicio.
- - Android (Chrome): abrir la dirección > menú de tres puntos > Instalar aplicación o Añadir a pantalla de inicio.
- Los pasos exactos pueden variar según el celular. Instale UNA sola vez y abra siempre desde ese ícono.
- Nota: si en el mismo celular tiene también la edición azul, ambos íconos se llaman "Smart Stock". Distíngalos por el color (naranja = Cocina).
+PASO 3. Primer ingreso
+  1. Abra la dirección en el celular donde ya usaba la v1.3 y toque "Entrar con Google".
+  2. Elija la cuenta autorizada. Si es la primera vez que se entra, los datos que ese celular
+     tenía de la v1.3 (ventas, facturas, conteos, fotos) se suben solos a la nube.
+  3. Desde ese momento, otros equipos solo necesitan iniciar sesión.
+  Importante: antes de actualizar, descargue una copia en Más > Respaldo de datos.
 
-PRIMER USO
- 1. Pestaña Stock: hacer el conteo físico inicial.
- 2. Pestaña Pizzas: confirmar con el chef los ingredientes y gramos de cada pizza.
- 3. Registrar ventas, compras y facturas.
- 4. Descargar el respaldo una vez por semana (Más > Descargar respaldo).
- 5. Para empezar de cero (por ejemplo, antes de entregar la app): Más > Borrar todos los datos (se toca dos veces).
+AUTORIZAR A OTRA PERSONA
+  Agregue su Gmail en firestore.rules (dentro de los corchetes, entre comillas simples, separado por comas)
+  y publique de nuevo las reglas en Firebase.
 
-CÓMO SUBIR UNA VERSIÓN NUEVA (se hace igual cada vez)
- 1. En el repositorio: Add file > Upload files. Arrastre los archivos nuevos con el mismo nombre; se reemplazan.
- 2. Commit changes y espere 1 a 3 minutos (en Deployments aparece una publicación con palomita verde).
- 3. En el celular, la app descarga sola la versión nueva al abrirse con Internet. Si estaba abierta, aparece abajo el aviso "Hay una versión nueva" con el botón Actualizar.
- 4. Los datos no se pierden con las actualizaciones. El ícono solo se cambia reinstalando; no lo cambie sin necesidad.
- 5. Cuando cambie archivos, cambie también el texto de V en sw.js (por ejemplo "smartstock-cocina-1.1").
-
-PARA QUE LA APP SIGA ACTIVA SIEMPRE
- - No cambie el nombre del repositorio ni de su usuario de GitHub: la dirección cambiaría y los celulares perderían sus datos.
- - No ponga el repositorio en privado ni lo elimine: la página dejaría de publicarse.
- - Active la verificación en dos pasos en GitHub y guarde los códigos de recuperación.
- - Mantenga una copia de estos archivos en su computadora o en la nube.
- - Revise una vez al mes que la dirección abra y que la versión sea la esperada.
-
-ADVERTENCIAS SOBRE LOS DATOS
- - Los datos viven solo en el celular donde se usa la app (en el navegador). Esta edición guarda sus datos con un nombre propio, así que no se mezclan con los de otras ediciones.
- - Si se borran los datos del navegador, se cambia de celular o se cambia la dirección web, esos datos no aparecen. Por eso el respaldo semanal es obligatorio.
- - Para restaurarlos: pestaña Más > pegar el contenido del respaldo > Restaurar.
- - Dos celulares distintos no ven los mismos datos. Para eso hace falta una versión con base de datos en línea.
- - Cualquiera que conozca la dirección puede abrir la app, pero no ve los datos del negocio, que están en el celular.
+NOTAS
+  - Sin Internet la app abre y registra; al volver la conexión se sincroniza.
+  - Las fotos de facturas se guardan comprimidas dentro de la base de datos (no se usa Cloud Storage).
+  - Plan gratuito Spark: cuenta con límites diarios de lectura y escritura; para un solo local alcanzan.
+  - Si el inicio de sesión no funciona desde el icono instalado en iPhone, abra la dirección en Safari
+    una vez e inicie sesión ahí.
+  - Siga haciendo una copia en archivo cada semana (Más > Respaldo de datos).
