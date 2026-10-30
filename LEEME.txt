@@ -1,6 +1,13 @@
-SMART STOCK COCINA v2.0  (El Chiquito Inka)
+SMART STOCK COCINA v2.2  (El Chiquito Inka)
 ===========================================
-Novedad: los datos viven en la nube (Firebase Firestore) y se entra con una cuenta Google autorizada.
+Novedad v2.2:
+  - Stock es el inicio. Pestañas en orden de trabajo: Stock, Compras, Ventas, Recetas y Más.
+  - Bienvenida con la fachada del local y el logo de Smart Stock (animación corta, solo la primera vez de cada sesión; un toque la salta).
+  - Más > Indicadores de mejora: exactitud, compras planificadas, quiebres, merma, días con ventas y conteo semanal, calculados solos.
+    (Compra planificada = factura registrada desde la compra sugerida. Las facturas anteriores a la v2.2 no cuentan en ese indicador.)
+  - Compras > Precios: comparador de proveedores por insumo con el último precio sin IGV.
+Novedad v2.1: vista de escritorio nueva (panel de control con indicadores, tabla de inventario, historial de ventas y tabla de facturas). Se activa sola cuando la pantalla mide 1000 px o más; en el celular todo sigue igual.
+Novedad v2.0: los datos viven en la nube (Firebase Firestore) y se entra con una cuenta Google autorizada.
 El propietario y el encargado ven los mismos datos desde cualquier celular o computadora.
 
 ARCHIVOS
@@ -15,8 +22,9 @@ PASO 1. Reglas de seguridad (Firebase)
 
 PASO 2. Subir la app a GitHub (reemplaza la v1.3)
   1. Entre al repositorio smartstock-cocina > Add file > Upload files.
-  2. Suba TODOS los archivos de esta carpeta, excepto firestore.rules y LEEME.txt si no los quiere publicar.
+  2. Suba TODOS los archivos de esta carpeta (incluidos fondo.jpg y logo-chiquito.png, que son nuevos), excepto firestore.rules y LEEME.txt si no los quiere publicar.
   3. Confirme (Commit changes). En 1 o 2 minutos la dirección ya tiene la v2.0.
+  Para actualizar desde la v2.0: suba los archivos de esta carpeta a GitHub y reemplace los anteriores (las reglas de Firebase no cambian).
   Dirección: https://75824889-bq.github.io/smartstock-cocina/
 
 PASO 3. Primer ingreso
